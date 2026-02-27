@@ -28,7 +28,9 @@
     <meta property="twitter:description" content="Reliable painting and waterproofing services in Ramanathapuram.">
     <meta property="twitter:image" content="image1.jpeg">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- TensorFlow.js stable (1.7.4) and DeepLab browser bundle (0.2.1) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/deeplab@0.2.1/dist/deeplab.min.js"></script>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -269,11 +271,17 @@
                 <!-- Preview Area -->
                 <div class="visualizer-main">
                     <div class="preview-container" id="visualizerContainer">
-                        <img src="visualizer_living.png" id="baseImage" class="room-image" alt="Base Room">
-                        <svg class="wall-mask" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
-                            <path id="wallArea" d="M 0,0 L 1000,0 L 1000,1000 L 0,1000 Z" fill="transparent"
-                                stroke="none"></path>
-                        </svg>
+                        <img src="visualizer_living.png" id="baseImage" class="room-image" alt="Base Room"
+                            crossorigin="anonymous">
+
+                        <!-- Canvas where the AI-painted result is rendered -->
+                        <canvas id="visualizerCanvas" class="wall-canvas"></canvas>
+
+                        <!-- Loading overlay shown during model load / segmentation -->
+                        <div id="loadingOverlay" class="loading-overlay hidden">
+                            <div class="spinner"></div>
+                            <span id="loadingMessage">Loading AI model…</span>
+                        </div>
                     </div>
 
                     <!-- Controls -->
