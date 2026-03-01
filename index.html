@@ -28,9 +28,6 @@
     <meta property="twitter:description" content="Reliable painting and waterproofing services in Ramanathapuram.">
     <meta property="twitter:image" content="image1.jpeg">
     <link rel="stylesheet" href="style.css">
-    <!-- TensorFlow.js stable (1.7.4) and DeepLab browser bundle (0.2.1) -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/deeplab@0.2.1/dist/deeplab.min.js"></script>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -199,6 +196,19 @@
                 <h2>Why Choose Us</h2>
                 <div class="underline"></div>
             </div>
+
+            <div class="why-us-intro reveal"
+                style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto; font-size: 1.1rem; line-height: 1.8; color: var(--text-light);">
+                <p style="margin-bottom: 1rem;"><strong style="color: var(--primary-color);">Our motto is Quality,
+                        Quality, Quality</strong> — with durability, fair pricing, and fast service.</p>
+                <p style="margin-bottom: 1rem;">Our trained staff provide colour consultation and digital design support
+                    for home elevations. Repair works are handled by skilled applicators with proper service support and
+                    warranty.</p>
+                <p>Customer satisfaction is our greatest strength. With decades of experience, we continue to grow as a
+                    trusted, traditional family enterprise built on values, workmanship, and long-term relationships.
+                </p>
+            </div>
+
             <div class="features-grid reveal">
                 <div class="feature-box">
                     <i class="fas fa-user-tie"></i>
@@ -224,82 +234,47 @@
 
             <div class="stats-grid">
                 <div class="stat-item reveal">
-                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-number" data-target="30"></div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-number" data-target="50"></div>
                     <div class="stat-label">Projects Completed</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-number" data-target="50"></div>
                     <div class="stat-label">Happy Clients</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-number" data-target="10"></div>
                     <div class="stat-label">Design Experts</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Paint Visualizer Section -->
-    <section class="section-padding" id="visualizer" style="background-color: var(--bg-light);">
+
+    <!-- Products Available Section -->
+    <section class="section-padding products-section" id="products">
         <div class="container">
             <div class="section-title reveal">
-                <h2>Try Our Paint Visualizer</h2>
+                <h2>Products Available</h2>
                 <div class="underline"></div>
+                <p class="section-subtitle">We proudly offer premium paints from India’s most trusted brands.</p>
             </div>
 
-            <div class="visualizer-container reveal">
-                <!-- Room Selector -->
-                <div class="room-selector">
-                    <button class="room-btn active" data-room="living">
-                        <img src="visualizer_living.png" alt="Living Room">
-                        <span>Living Room</span>
-                    </button>
-                    <button class="room-btn" data-room="bedroom">
-                        <img src="visualizer_bedroom.png" alt="Bedroom">
-                        <span>Bedroom</span>
-                    </button>
-                    <button class="room-btn" data-room="exterior">
-                        <img src="visualizer_exterior.png" alt="House Exterior">
-                        <span>House Exterior</span>
-                    </button>
+            <div class="brands-grid reveal">
+                <div class="brand-card">
+                    <img src="paint1.jpg" alt="Asian Paints Official Logo">
                 </div>
-
-                <!-- Preview Area -->
-                <div class="visualizer-main">
-                    <div class="preview-container" id="visualizerContainer">
-                        <img src="visualizer_living.png" id="baseImage" class="room-image" alt="Base Room"
-                            crossorigin="anonymous">
-
-                        <!-- Canvas where the AI-painted result is rendered -->
-                        <canvas id="visualizerCanvas" class="wall-canvas"></canvas>
-
-                        <!-- Loading overlay shown during model load / segmentation -->
-                        <div id="loadingOverlay" class="loading-overlay hidden">
-                            <div class="spinner"></div>
-                            <span id="loadingMessage">Loading AI model…</span>
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <div class="visualizer-controls">
-                        <div class="control-group">
-                            <label>Opacity / Intensity</label>
-                            <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="0.6">
-                        </div>
-                        <div class="control-btns">
-                            <button class="btn btn-outline" id="resetVisualizer">Reset Color</button>
-                            <button class="btn btn-outline" id="toggleComparison">Compare: OFF</button>
-                            <button class="btn btn-primary" id="downloadDesign"><i class="fas fa-download"></i> Download
-                                Design</button>
-                        </div>
-                        <p class="visualizer-tip"><i class="fas fa-info-circle"></i> Tip: Select a colour from the
-                            "Explore Our Colour Collection" section below and click "Apply in Visualizer" to see it
-                            here!</p>
-                    </div>
+                <div class="brand-card">
+                    <img src="paint2.jpg" alt="Nippon Paint Official Logo">
+                </div>
+                <div class="brand-card">
+                    <img src="paint3.jpg" alt="Dulux Official Logo" style="max-height: 80px;">
+                </div>
+                <div class="brand-card">
+                    <img src="paint4.jpg" alt="Birla Opus Official Logo">
                 </div>
             </div>
         </div>
@@ -437,8 +412,7 @@
                     <h2 id="modalName">Colour Name</h2>
                     <p id="modalHex">#000000</p>
                     <div class="modal-btns">
-                        <button class="btn btn-primary" id="applyVisualizer">Apply in Visualizer</button>
-                        <button class="btn btn-outline" id="addToPaletteModal">Add to My Palette</button>
+                        <button class="btn btn-primary" id="addToPaletteModal">Add to My Palette</button>
                     </div>
                 </div>
             </div>
