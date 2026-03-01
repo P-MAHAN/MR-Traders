@@ -435,10 +435,11 @@ nav {
 }
 
 .branch-info p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-light);
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    line-height: 1.6;
 }
 
 .branch-info i {
