@@ -438,13 +438,16 @@ nav {
     margin-bottom: 1.2rem;
     color: var(--text-light);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap: 10px;
     line-height: 1.6;
 }
 
 .branch-info i {
     color: var(--primary-color);
-    margin-top: 5px;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
 }
 
 /* Form Section */
